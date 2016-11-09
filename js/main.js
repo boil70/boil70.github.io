@@ -21,23 +21,30 @@ $(document).ready(function() {
 
 
 	function toggleMenu() {
-		if ($(".st-nav").hasClass("menu-active")) {
-			$("nav.st-nav").removeClass("menu-active");
-			// $("nav.st-nav").css("padding-bottom", "10px");
-			$("ul.menu").css("display", "none");
-		} else {
-			$("nav.st-nav").addClass("menu-active");
-			// $("nav.st-nav").css("padding-bottom", "0");
-			$("ul.menu").css("display", "block");
+		if ($(window).width() < 752) {
+			if ($(".st-nav").hasClass("menu-active")) {
+				$("nav.st-nav").removeClass("menu-active");
+				$("ul.menu").css("display", "none");
+				$("body").attr("onresize", "chFx()");
+			} else {
+				$("nav.st-nav").addClass("menu-active");
+				$("ul.menu").css("display", "block");
+				$("body").attr("onresize", "chFx()");
+			}
 		}
-		// $("ul.menu").toggle();
 	};
+
+
 
 	$("#menu-toggle").click(function() {toggleMenu()});
 
 	$("ul.menu a").click(function() {toggleMenu()});
-
-
 });
 
-
+chFx = function() {
+	if ($(window).width() > 752) {
+		$("nav.st-nav").removeClass("menu-active");
+		$(".menu").removeAttr("style");
+		$("body").removeAttr("onresize");
+	}
+}
