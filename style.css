@@ -229,7 +229,7 @@ p {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 4rem;
-  padding-left: 20px;
+  padding: 0 10px;
   -webkit-user-select: auto;
      -moz-user-select: auto;
       -ms-user-select: auto;
@@ -322,17 +322,20 @@ p {
   }
   .st-hd .soc-li {
     position: absolute;
-    top: 5px;
+    top: 10px;
     left: auto;
     right: 15px;
   }
   .st-hd .soc-li .num {
     font-size: 2rem;
   }
+  .st-hd .menu-active a#menu-toggle {
+    line-height: 40px;
+  }
   .st-hd .st-nav {
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 15px 10px;
   }
   .st-hd .st-nav #menu-toggle {
     cursor: pointer;
@@ -343,7 +346,7 @@ p {
     -webkit-flex-direction: column-reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
-    margin: .5rem -1.21rem 0;
+    margin: .3rem -1.21rem 0;
   }
   .st-hd .st-nav .menu li.mn-it {
     padding: 0 1.25rem;
@@ -367,7 +370,8 @@ p {
 
 @media (max-width: 430px) {
   .st-hd .soc-li {
-    top: 10px;
+    top: 15px !important;
+    right: 5px;
   }
   .st-hd .soc-li .num {
     font-size: 1.4rem;
@@ -388,6 +392,8 @@ p {
   }
   .sl-wr {
     margin-top: 5em !important;
+    padding-left: 20px;
+    padding-right: 0;
   }
 }
 
